@@ -12,6 +12,7 @@
             <style type="text/css">
                 .image-container {
                     height: 75px;
+                    width: auto;
                 }
                 .image-container img {
                     width: auto;
@@ -44,6 +45,17 @@
                     margin-right: 5px;
                     margin-bottom: 70px;
                 }
+            @media print {
+                .image-container {
+                    height: 75px;
+                    width: auto;
+                }
+                .image-container img {
+                    width: auto;
+                    height: 100%;
+                    background-color: rgb(255,255,255);
+                }    
+        }
             </style>
             <div class="image-container">
                 <img src="https://lh3.googleusercontent.com/pw/ADCreHd-WEU1Dzz_toipPvihY5PmxoP0fvoXNiXiACTc0pl5t2M8rvmnXHVU2EAOzlKijyQ3HQ0FNQQDfhTFTY_HJpXzywvtu_zlLmtGe-ojQ-HwN1x8AYE=w2400" alt="glass and marker logo">

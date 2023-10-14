@@ -25,13 +25,40 @@
         </h1>
     </head>
     <body>
+        <style>
+            .variable-fields-list li {
+                padding-top: 6px;
+                padding-bottom: 6px;
+                font-weight: bold;
+            }
+            ul {
+                list-style-type: none;
+                margin-left: -25px;
+            }
+            .final-paragraph {
+                padding-top: 20px;
+            }
+            .next-steps-padding {
+                margin-bottom: -10px;
+                font-weight: bold;
+            }
+            .entire-body-margin {
+                margin-top: 70px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 15px;
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-bottom: 70px;
+            }
+        </style>
+        <div class="entire-body-margin">
         <figure>
             <figure>
                 <p>Hi [Contractor name],</p>
             </figure>
             <figure>    
                 <p>
-                We are pleased to BOOK you for [project name] and are excited to welcome you to Glass and Marker!
+                We are pleased to BOOK you for [project name] and are excited to welcome you to Glass and Marker! 
                 </p>
             </figure>
             <figure>
@@ -45,21 +72,27 @@
                 </p>
             </figure>    
             <figure>
+                <div class="variable-fields-list">
                 <p>
-                Project ID: 
-                Role: 
-                Dates:
-                Rate:
-                Kit fee (if applicable):
-                Payment terms: 
-                Kill fee terms: 50% for cancellation within 48hrs, 100% within 24hrs
-                SOW: 
+                <ul>
+                    <li>Project ID: </li>
+                    <li>Role: </li>
+                    <li>Dates:</li>
+                    <li>Rate: </li>
+                    <li>Kit fee (if applicable): </li>
+                    <li>Payment terms: </li>
+                    <li>Kill fee terms: 50% for cancellation within 48hrs, 100% within 24hrs</li>
+                    <li>SOW: </li>
+                </ul> 
                 </p>
+                </div>
             </figure>
-            <figure>
-                <p>    
-                Next Steps:
+            <figure class="final-paragraph">    
+                <div class="next-steps-padding">Next Steps:</div>
+                <p>
                 Once we've received your signed contract, tax paperwork, and NDA, we will set up a meeting to walk you through the tools and SOPs we use to collaborate at G+M.
+                </p>
+                <p>
                 Please confirm receipt of this booking and send any questions within 24 hrs. 
                 </p>
             </figure>
@@ -69,6 +102,7 @@
                 </p>    
             </figure>       
         </figure>
+        </div>
     </body>
 </html>       
 

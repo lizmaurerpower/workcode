@@ -1,54 +1,58 @@
-function searchAndCopyToNewTab() {
-    var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-    var sourceSheetName = '📇 Rolodex';
-    var targetSheetName = 'TEST COPY 👁️‍🗨️ Search';
+// This function will be triggered whenever there is an edit in the spreadsheet
+function onEdit(e) {
+  var range = e.range;
+  var sheetName = range.getSheet().getName();
+  var cellValue = range.getValue();
+
+  // Check if the edited cell is in the correct sheet and cell
+  if (sheetName === 'Copy of 👁️‍🗨️ Search' && range.getA1Notation() === 'I5') {
+    // Run the searchAndRetrieve function with the new search criteria
+    searchAndRetrieve(cellValue);
+  }
+}
+
+// This is the main function for searching and retrieving rows
+function searchAndRetrieve(searchCriteria)
+
+function searchAndRetrieve() {
+  // Get the active spreadsheet
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   
-    var sourceSheet = spreadsheet.getSheetByName(sourceSheetName);
-    var targetSheet = spreadsheet.getSheetByName(targetSheetName);
+  // Set the target sheet
+  var targetSheet = spreadsheet.getSheetByName('Copy of 👁️‍🗨️ Search');
   
-    if (!sourceSheet || !targetSheet) {
-      Logger.log("Source or target sheet not found");
-      return;
-    }
+  // Get the search criteria from cell I5 (initial search cell)
+  var searchCriteria = targetSheet.getRange('I5').getValue();
   
-    // Retrieve search value from the list dropdown in I5 on the target sheet
-    var criteriaValue = targetSheet.getRange('I5').getValue();
-    Logger.log("Criteria Value: " + criteriaValue);
+  // Set the separate sheet
+  var separateSheet = spreadsheet.getSheetByName('📇 Rolodex');
   
-    if (!criteriaValue) {
-      Logger.log("No criteria selected in I5");
-      return;
-    }
+  // Get the data range from column AR in the rolodex sheet (target)
+  var dataRange = separateSheet.getRange('BA:BA');
   
-    var dataRange = sourceSheet.getRange('AR1:BJ1000');
-    var data = dataRange.getValues();
+  // Get the values in the data range
+  var values = dataRange.getValues();
   
-    var matchingRows = [];
+  // Initialize an array to store matching rows
+  var matchingRows = [];
   
-    // Loop through all cells in the specified range
-    for (var i = 0; i < data.length; i++) {
-      var row = data[i];
-      for (var j = 0; j < row.length; j++) {
-        if (row[j] === criteriaValue) {
-          Logger.log("Match found at Row " + (i + 1) + ", Column " + String.fromCharCode(j + 44)); // Convert column index to letter
-          matchingRows.push(data[i]);
-          break; // Break out of the inner loop once a match is found in the current row
-        }
-      }
-    }
-  
-    if (matchingRows.length > 0) {
-      // Clear existing data in target sheet (assuming headers are present)
-      targetSheet.clearContents();
-  
-      // Retrieve matching rows to the target sheet starting from specified cell (e.g., A15)
-      targetSheet.getRange('A15').offset(0, 0, matchingRows.length, matchingRows[0].length).setValues(matchingRows);
-      Logger.log("Setting Values to Range: " + targetSheet.getRange('A15').offset(0, 0, matchingRows.length, matchingRows[0].length).getA1Notation());
-  
-      Logger.log("Matching rows copied to " + targetSheetName);
-    } else {
-      Logger.log("No matching rows found.");
+  // Loop through the values to find all matches
+  for (var i = 0; i < values.length; i++) {
+    if (values[i][0] == searchCriteria) {
+      // If a match is found, retrieve the entire row
+      var targetRow = separateSheet.getRange(i + 1, 1, 1, separateSheet.getLastColumn()).getValues();
+      
+      // Add the matching row to the array
+      matchingRows.push(targetRow[0]);
     }
   }
-
   
+  // Check if any matching rows were found
+  if (matchingRows.length > 0) {
+    // Set the values in the target sheet starting from cell A15
+    targetSheet.getRange(15, 1, matchingRows.length, matchingRows[0].length).setValues(matchingRows);
+  } else {
+    // If no matching rows were found, clear the target range
+    targetSheet.getRange(15, 1, targetSheet.getLastRow() - 14, targetSheet.getLastColumn()).clearContent();
+  }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <!--copied over meta details from the source code of original gmail template to ensure proper coding-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="application-name" content="Glass & Marker Mail">
+    <meta name="description" content="Google's approach to email">
+    <meta name="application-url" content="https://mail.google.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post/Creative Freelancer Booking Email</title>
+    <!--adding formatting to the template to match the gmail template-->    
+    <style>
+        .image-align {
+            text-align: center;
+        } 
+        .text-body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            margin: auto;
+        }
+        .variable-fields-list ul {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            margin: auto;
+            list-style-type: none;
+        }
+        .next-steps-padding {
+            margin-bottom: -10px;
+            padding-top: 15px;
+            font-weight: bold;
+        }
+        .employee-signature {
+            margin-bottom: -10px;
+            padding-top: 15px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+        }
+        a {
+            color: black;
+        }
+        a:hover {
+            color: #ABB2B9;
+        }
+    </style>    
+</head>
+<body>
+    <table width="100%">
+        <tr> 
+            <td class="image-align" style="background-color: white;">
+    <!--creating a hyperlink to the brand imaging to avoid the 'download' button from populating in the email-->            
+                <a href="https://glassandmarker.com/"><img src="https://lh3.googleusercontent.com/pw/ADCreHd-WEU1Dzz_toipPvihY5PmxoP0fvoXNiXiACTc0pl5t2M8rvmnXHVU2EAOzlKijyQ3HQ0FNQQDfhTFTY_HJpXzywvtu_zlLmtGe-ojQ-HwN1x8AYE=w2400" alt="glass and marker company logo" width="400" height="auto"></a>
+            </td>
+        </tr>  
+    </table>
+    <table width="70%" cellpadding="20" cellspacing="10" class="text-body">
+        <tr>
+            <td style="background-color: white;">
+                <div>   
+                    <p style="font-family: Arial, Helvetica, sans-serif; font-size: 15px;">Hi [contractor],</p>
+                    <p style="font-family: Arial, Helvetica, sans-serif; font-size: 15px;">We are pleased to BOOK you for Project [project name] and are excited to welcome you to Glass and Marker!</p>
+                    <p style="font-family: Arial, Helvetica, sans-serif; font-size: 15px;">G+M is a full-service creative studio headquartered in Oakland, CA that specializes in creating marketing collateral for our clients’ most important communications with investors and customers. We take pride in fostering creativity while maintaining a professional environment that encourages open communication, teamwork, and a strong work ethic.</p>
+                    <p style="font-family: Arial, Helvetica, sans-serif; font-size: 15px;">Please find a summary of the previously discussed terms below which will be included in your forthcoming contract.</p>
+                <div class="variable-fields-list" >
+                    <ul style="margin: 0; padding: 0; list-style-type: none;">
+    <!--list items that will be prefilled with google sheet responses; mapping in Zapier*-->
+                        <li style="margin-bottom: 10px; padding-left: 1em; text-indent: -0em;"><strong>Project ID:</strong> [project ID]<li>
+                        <li style="margin-bottom: 10px; padding-left: 1em; text-indent: -0em;"><strong>Role:</strong> [role]</li>
+                        <li style="margin-bottom: 10px; padding-left: 1em; text-indent: -0em;"><strong>Current Date(s) of Engagement:</strong> [start date - delivery date]</li>
+                        <li style="margin-bottom: 10px; padding-left: 1em; text-indent: -0em;"><strong>Project Fee:</strong> $[contract amount]</li>
+    <!--need to add a path to fill this option out depending on PTE or IC (if IC, net 30 Bill. if PTE, WB payroll)-->            
+                        <li style="margin-bottom: 10px; padding-left: 1em; text-indent: -0em;"><strong>Payment terms:</strong> Initial 1/3 due upon received signed contract, 1/3 due after principal photography, and final 1/3 due upon delivery of the final approved video program.</li>
+                        <li style="margin-bottom: 10px; padding-left: 1em; text-indent: -0em;"><strong>Kill fee terms:</strong> If applicable, fees will be evaluated based on how much work has been completed on the project and settled via a mutual agreement.</li></li>
+                        <li style="margin-bottom: 10px; padding-left: 1em; text-indent: -0em;">The first 25% of payment is non-refundable, but will be factored in when assessing kill fees - if they occur. The difference in project fees may also be applied to other projects, if applicable. </li></li>
+                        <li style="margin-bottom: 10px; padding-left: 1em; text-indent: -0em;"><strong>SOW:</strong> [main deliverables]</li>
+                    </ul> 
+                </div>    
+                    <p class="next-steps-padding" style="font-family: Arial, Helvetica, sans-serif; font-size: 15px;"><strong>Next Steps:</strong></p>
+    <!--separating 'next steps' to add spacing formatting-->              
+                    <p style="font-family: Arial, Helvetica, sans-serif; font-size: 15px;">Once we've received your signed contract, tax paperwork, and NDA, we will set up a meeting to walk you through the tools and SOPs we use to collaborate at G+M.</p>
+                    <p style="font-family: Arial, Helvetica, sans-serif; font-size: 15px;">Please confirm receipt of this booking and send any questions within 24 hrs.</p>
+                    <p style="font-family: Arial, Helvetica, sans-serif; font-size: 15px;">Thank you, and welcome aboard!</p>
+                    <p class="employee-signature" style="font-family: Arial, Helvetica, sans-serif; font-size: 15px;">[employee name]</p>
+                </div> 
+            </td>         
+        </tr>
+    </table>    
+    <footer>
+        <!-- Adding fill option for mapping employee name as signature including hyperlinked icons to G&M socials -->
+        <p style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; text-align: center;">
+            <a href="https://glassandmarker.com/" target="_blank">glassandmarker.com</a>
+        </p>
+        <div style="text-align: center;">
+            <a href="https://www.instagram.com/glassandmarker/" target="_blank" style="margin: 0 0px; text-decoration: none;">
+                <img src="https://lh3.googleusercontent.com/pw/ADCreHfLR82rJLHd8pRsRQIGIpoPzCJ3zo2BeaC5wbsYgh8vqwLxT88NywYzCMzbwGZuvJL9WSFWeslzs5u_u-gpcA2I6vFFgOjuUPdLk_UvevCyJOJryRA=w2400" width="25" height="auto" alt="instagram company icon">
+            </a>
+            <a href="https://www.linkedin.com/company/glass-&-marker-inc-" target="_blank" style="margin: 0 0px; text-decoration: none;">
+                <img src="https://lh3.googleusercontent.com/pw/ADCreHfgTzLojGtAnfdfO6hzMFJq_mOBQRV_cSdcCPArU3ItuvKy3_LjDfa6bdyFqTYlcjd4H8NkvvcYMxG3Xk_oUas0ueWO-zLXS5Pthlp_G0aQkw55IN4=w2400" width="25" height="auto" alt="linkedin company icon">
+            </a>
+            <a href="https://vimeo.com/glassandmarker" target="_blank" style="margin: 0 0px; text-decoration: none;">
+                <img src="https://lh3.googleusercontent.com/pw/ADCreHcGDVLNNkp5Pe_aAPOgMUVcdh7gKbHCbx9N2fQq9L9WCsFYeVzcPUj0M-TB-E39gnGI9IC8gTGSGfhZaU9XzrTL4gYl0Hvo-OYjX3RmjEPv0aPQ9ss=w2400" width="25" height="auto" alt="vimeo company icon">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>        

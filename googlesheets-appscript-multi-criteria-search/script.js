@@ -10,9 +10,6 @@ function onEdit(e) {
     searchAndRetrieve(cellValue);
   }
 }
-// This is the main function for searching and retrieving rows
-function searchAndRetrieve(searchCriteria)
-
 function searchAndRetrieve() {
   // Get the active spreadsheet
   var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();

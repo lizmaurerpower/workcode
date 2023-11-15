@@ -10,7 +10,6 @@ function onEdit(e) {
     searchAndRetrieve(cellValue);
   }
 }
-
 // This is the main function for searching and retrieving rows
 function searchAndRetrieve(searchCriteria)
 
